@@ -1,0 +1,62 @@
+### Variables
+@baseUrl = http://127.0.0.1:8000
+
+### 1. Crear Categoría 1
+POST {{baseUrl}}/categorias/
+Content-Type: application/json
+
+{
+  "nombre": "Pizzas",
+  "descripcion": "Pizzas artesanales con masa madre"
+}
+
+### 2. Crear Categoría 2
+POST {{baseUrl}}/categorias/
+Content-Type: application/json
+
+{
+  "nombre": "Bebidas",
+  "descripcion": "Gaseosas, jugos y aguas saborizadas"
+}
+
+### 3. Listar Categorías
+GET {{baseUrl}}/categorias/
+
+### 4. Crear Producto con relación a Categoría (ID 1)
+POST {{baseUrl}}/productos/
+Content-Type: application/json
+
+{
+  "nombre": "Pizza Fugazzeta",
+  "descripcion": "Rellena con queso muzarella y abundante cebolla",
+  "precio_base": "12500.00",
+  "disponible": true,
+  "categoria_ids": [1]
+}
+
+### 5. Crear Producto con múltiples Categorías (IDs 1 y 2 - Combo)
+POST {{baseUrl}}/productos/
+Content-Type: application/json
+
+{
+  "nombre": "Combo Pizza + Gaseosa",
+  "descripcion": "Pizza individual especial con bebida de 500ml",
+  "precio_base": "15000.00",
+  "disponible": true,
+  "categoria_ids": [1, 2]
+}
+
+### 6. Listar Productos (verifica que devuelve las categorías asociadas)
+GET {{baseUrl}}/productos/
+
+### 7. Actualizar Producto
+PUT {{baseUrl}}/productos/1
+Content-Type: application/json
+
+{
+  "precio_base": "13500.00",
+  "disponible": true
+}
+
+### 8. Eliminar Producto
+DELETE {{baseUrl}}/productos/1

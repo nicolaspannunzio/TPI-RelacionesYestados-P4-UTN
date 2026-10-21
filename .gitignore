@@ -1,0 +1,18 @@
+# Python / Entorno virtual
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+
+# Node / Vite / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs y bases locales / temporales
+*.log
+.vscode/
+.idea/
