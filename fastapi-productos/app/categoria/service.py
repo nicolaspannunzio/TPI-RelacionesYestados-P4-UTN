@@ -3,6 +3,7 @@ from fastapi import HTTPException, status
 from sqlmodel import Session, select
 from app.categoria.model import Categoria
 from app.categoria.schema import CategoriaCreate, CategoriaUpdate
+from app.producto.model import ProductoCategoria
 
 def get_all_categorias(session: Session) -> List[Categoria]:
     statement = select(Categoria)

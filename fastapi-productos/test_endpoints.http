@@ -15,7 +15,7 @@ POST {{baseUrl}}/categorias/
 Content-Type: application/json
 
 {
-  "nombre": "Bebidas",
+  "nombre": "Bebidas sin alcohol",
   "descripcion": "Gaseosas, jugos y aguas saborizadas"
 }
 
